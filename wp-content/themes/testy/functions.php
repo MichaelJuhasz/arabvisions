@@ -7,11 +7,11 @@
 add_shortcode( 'member', 'member_check_shortcode' );
 
 function member_check_shortcode( $atts, $content = null ) {
-	 if ( is_user_logged_in() && !is_null( $content ) && !is_feed() ){
+	 if ( is_user_logged_in() && !is_null( $content ) && !is_feed() )
 		return do_shortcode($content);
-	}
-	return '<p>Please register to add content.</p> [wp-modal-login login_text="Login" logout_text="Logout"]';//<?php add_modal_login_button( $login_text = 'Login', $logout_text = 'Logout', $logout_url = '', $show_admin = false ); 
-}
+	return '<p>Please <a class="login wpml-btn login-window" href="#login-box">login</a> to add content.</p>';
+}//<?php add_modal_login_button( $login_text = 'Login', $logout_text = 'Logout', $logout_url = '', $show_admin = false ); 
+
 
 /**
 * This custom function is for PLUGIN: WP Modal Login - Hook to implement shortcode logic inside WordPress nav menu items
@@ -41,3 +41,10 @@ function my_awesome_redirect( $redirect ) {
    return $redirect;
 }
 add_filter( 'wpml_redirect_to', 'my_awesome_redirect' );
+
+function fix_jquery(){
+	wp_deregister_script('jquery');
+	wp_register_script('jquery',('http://code.jquery.com/jquery-1.10.1.min.js'), false);
+	wp_enqueue_script('jquery');
+}
+add_action('wp_enqueue_scripts','fix_jquery');

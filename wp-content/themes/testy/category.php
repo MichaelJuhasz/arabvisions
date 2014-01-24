@@ -11,44 +11,55 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
+<!-- 	<section id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
+			<div class="banner"> -->
+<div id="main-content" class="main-content">
 
-			<?php if ( have_posts() ) : ?>
+	<div id="primary" class="content-area container">
+		<div id="content" class="page-content" role="main">
 
-			<header class="archive-header">
-				<h1 class="archive-title"><?php single_cat_title(); ?></h1>
+			<div class="banner">
 
-				<?php
-					// Show an optional term description.
-					$term_description = term_description();
-					if ( ! empty( $term_description ) ) :
-						printf( '<div class="taxonomy-description">%s</div>', $term_description );
-					endif;
-				?>
-			</header><!-- .archive-header -->
+				<?php if ( have_posts() ) : ?>
 
-			<?php
-					// Start the Loop.
-					while ( have_posts() ) : the_post();
+				<div class="row">
+					<h1 class="col-md-4 col-md-offset-1"><?php single_cat_title(); ?></h1>
+				</div>
+				<div class="row">
+					<?php
+						// Show an optional term description.
+						$term_description = term_description();
+						if ( ! empty( $term_description ) ) :
+							printf( '<div class="col-md-3 col-md-offset-1 field-description">%s</div>', $term_description );
+						endif;
+					?>
+				</div>
 
-					/*
-					 * Include the post format-specific template for the content. If you want to
-					 * use this in a child theme, then include a file called called content-___.php
-					 * (where ___ is the post format) and that will be used instead.
-					 */
-					get_template_part( 'content', get_post_format() );
+				<div class="push row">
+					<?php
+							// Start the Loop.
+							while ( have_posts() ) : the_post();
 
-					endwhile;
-					// Previous/next page navigation.
-					twentyfourteen_paging_nav();
+							/*
+							 * Include the post format-specific template for the content. If you want to
+							 * use this in a child theme, then include a file called called content-___.php
+							 * (where ___ is the post format) and that will be used instead.
+							 */
+							get_template_part( 'content-arab', get_post_format() );
 
-				else :
-					// If no content, include the "No posts found" template.
-					get_template_part( 'content', 'none' );
+							endwhile;
+							// Previous/next page navigation.
+							twentyfourteen_paging_nav();
 
-				endif;
-			?>
+						else :
+							// If no content, include the "No posts found" template.
+							get_template_part( 'content-arab', 'none' );
+
+						endif;
+					?>
+				</div>
+			</div>
 		</div><!-- #content -->
 	</section><!-- #primary -->
 

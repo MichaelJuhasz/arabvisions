@@ -21,7 +21,8 @@
 			</div><!-- .site-info -->
 		</footer><!-- #colophon -->
 	</div><!-- #page -->
-
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+	<script src="wp-content/themes/testy/js/page.js"></script>
 	<?php wp_footer(); ?>
 </body>
 </html>
