@@ -10,7 +10,7 @@
  */
 ?>
 
-<article class="col-md-5 col-md-offset-1" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article  id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php twentyfourteen_post_thumbnail(); ?>
 
 	<header class="entry-header">
@@ -44,7 +44,7 @@
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
-	<?php if ( is_search() ) : ?>
+	<?php if ( is_search() || is_category()) : ?>
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->

@@ -12,11 +12,11 @@
 
 		</div><!-- #main -->
 
-		<footer id="colophon" class="site-footer" role="contentinfo">
+		<footer id="colophon" class="site-footer row" role="contentinfo">
 
 			<?php get_sidebar( 'footer' ); ?>
 
-			<div class="site-info">
+			<div class="site-info col-md-2 col-md-offset-5">
 				<p>&copy; <?php echo date("Y") ?> Michael Juhasz </p>
 			</div><!-- .site-info -->
 		</footer><!-- #colophon -->

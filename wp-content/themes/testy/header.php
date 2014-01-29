@@ -43,9 +43,9 @@
 			</div>
 
 			<div class="navbar-form navbar-right" role="search">
-				<button class="btn btn-default" data-toggle="modal" data-target="#modalPost" title="Add a post">
-		  				+
-				</button>
+				<a href="#" class="col-md-3" data-toggle="modal" data-target="#modalPost" title="Add a post">
+		  				Add a post
+				</a>
 		      <div class="form-group">
 		        <?php get_search_form(); ?>
 		      </div> 

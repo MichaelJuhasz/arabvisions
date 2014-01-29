@@ -14,7 +14,7 @@ Version: 1.0
 @import url("http://fonts.googleapis.com/css?family=Droid+Serif");
 
 body, html, .site-main, .input-group-btn  {
-	height: 100%;
+	/*height: 100%;*/
 }
 
 .site-main{
@@ -55,17 +55,34 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', e
 }
 
 .main-content-front{
-	height: 100%;
+	/*height: 100%;*/
 	background-image: url('images/egypt2.jpg');
 }
 
 .banner{
-	margin: -105px;
+	margin-top: -100px;
 	margin-bottom: 0px;
 	padding-top: 100px;
 	height: 280px;
-	background-image: url('images/postbanner.jpg');
+	/*background-image: url('images/postbanner.jpg');*/
+	box-shadow: inset 0px 0px 20px 10px rgba(0,0,0,.6);
 	}
+
+.posts{
+	background-image: url('images/posts.jpg');
+}
+
+.economics{
+	background-image: url('images/civic-action.jpg');
+}
+
+.civil-rights{
+	background-image: url('images/civil-rights.jpg');
+}
+
+.public-action{
+	background-image: url('images/public-action.jpg');
+}
 
 .site-content{
 	padding-top: 15%;
@@ -100,16 +117,32 @@ ul{
 	margin-top: 5%;
 }
 
+.login-message{
+	margin-top: 10px;
+}
+
 /* Fonts, etc. */
 
 .navbar-default .navbar-nav > li > a{
 	color: white;
 }
-.site-content h2, .banner h1{
+.site-content h2, .entry-header h1{
 	font: 2.5em 'Droid Serif', serif;
 	color: #e05014;
-	text-shadow: 1px 1px 1px #000, 1px 1px .5px #FFF;
+	/*text-shadow: 1px 1px 1px #000, 1px 1px .5px #FFF;*/
 	/*text-shadow: .5px .5px #FFF;*/
+}
+
+.banner h1{
+	font: 3em 'Droid Serif', serif;
+	color: #e05014;
+	text-shadow: 1px 1px 1px #000, 1px 1px .5px #FFF;
+}
+
+.cat-title a{
+	/*font-size: 1.3em;*/
+	color: #e05014;
+	margin-left: -40px;
 }
 
 .site-content h3, .cat_names h2{
@@ -118,20 +151,21 @@ ul{
 	font: 1.5em 'Droid Serif', serif;
 	color: #e05014;
 	text-shadow: 1px 1px 1px #000, 1px 1px .5px #FFF;
-	/*text-shadow: .5px .5px #FFF;*/
 }
 
-.cat_names h2{
+.cat_names h2 {
 	font: 2em 'Droid Serif', serif;
 	text-shadow: none;
-	/*margin-bottom: -10px;*/
+}
+
+#reply-title{
+	color: white;
 }
 
 .site-content p, .site-content li a, .site-content li, .field-description{
 	font: 1.5em 'Rokkitt', serif;
 	color: white;
 	text-shadow: 1px 1px 1px #000, 1px 1px .5px #FFF;
-	/*text-shadow: .5px .5px #FFF;*/
 }
 
 .nav-box h2, .nav-box h3 {
@@ -151,7 +185,7 @@ ul{
 	text-shadow: none;
 }
 
-.post_info, .post_info a{
+.post_info, .post_info a, #reply-title {
 	margin-top: -7px;
 	margin-bottom: 8px;
 	font: 1.1em 'Rokkitt', serif;
@@ -159,19 +193,35 @@ ul{
 	border-bottom: solid 1px rgba(255,255,255,.4);
 }
 
+#reply-title {
+	margin-top: 10px;
+}
+
+.logged-in-as, .comment-form-comment label, .form-allowed-tags{
+	font: 1.1em 'Rokkitt', serif;
+	color: white;
+}
+
+.comment-form-comment label{
+	font-size: 1.3em;
+}
+
+
 /* content*/
 .entry-title a{
 	color: #e05014;
 	text-shadow: none;
 }
 
-.entry-meta a{
+.entry-meta a, .post-ratings, .login-message{
 	color: white;
 	font: .8em 'Droid Serif', serif;
 }
 
-.entry-content {
+.entry-content, .entry-summary {
 	color: white;
 	font: 1.5em 'Rokkitt', serif;
 	border-bottom: solid 1px rgba(255,255,255,.4);
+	padding-top: 20px;
+
 }

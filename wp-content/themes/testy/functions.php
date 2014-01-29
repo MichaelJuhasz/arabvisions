@@ -35,12 +35,12 @@ add_filter("walker_nav_menu_start_el", "shortcode_menu" , 10 , 2);
 * This function is also for WP Modal Login and comes from the author
 * It changes the login redirect location
 */
-function my_awesome_redirect( $redirect ) {
-   $redirect = site_url('/?page_id=5');
+// function my_awesome_redirect( $redirect ) {
+//    $redirect = site_url('/?page_id=5');
 
-   return $redirect;
-}
-add_filter( 'wpml_redirect_to', 'my_awesome_redirect' );
+//    return $redirect;
+// }
+// add_filter( 'wpml_redirect_to', 'my_awesome_redirect' );
 
 function fix_jquery(){
 	wp_deregister_script('jquery');
@@ -48,3 +48,28 @@ function fix_jquery(){
 	wp_enqueue_script('jquery');
 }
 add_action('wp_enqueue_scripts','fix_jquery');
+
+
+/** 
+* Courtesy of MichaelH
+* http://wordpress.org/support/topic/how-to-get-the-current-category-slug
+*/
+function get_cat_slug(){
+	if (is_category( )) {
+		$cat = get_query_var('cat');
+		$yourcat = get_category ($cat);
+		echo $yourcat->slug;
+	 }
+}
+
+function custom_excerpt_length($length){
+	return 20;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999);
+
+// Replaces the excerpt "more" text with a link 
+function new_excerpt_more($more){
+	global $post;
+	return '<br/><a class="moretag" href="'.get_permalink($post->ID).'"> Read on...</a>';
+}
+add_filter('excerpt_more','new_excerpt_more');
